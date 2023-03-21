@@ -11,11 +11,22 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     const transaction = await queryInterface.sequelize.transaction()    
     try {
-      const adminUser = await usersService.findUserByEmailOr404('example@academlo.com')
+      const adminUser = await usersService.findUserByEmailOr404('marcos@academlo.com')
+      const adminUser1 = await usersService.findUserByEmailOr404('luis@academlo.com')
+
       const adminRole = await rolesService.findRoleByName('admin')
+
       const profiles = [
         {
+          //!atencion
           user_id: adminUser.id,
+          role_id: adminRole.id,
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          //!atencion
+          user_id: adminUser1.id,
           role_id: adminRole.id,
           created_at: new Date(),
           updated_at: new Date(),
@@ -34,12 +45,13 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction()
 
     try {
-      const adminUser = await usersService.findUserByEmailOr404('example@academlo.com')
+      const adminUser = await usersService.findUserByEmailOr404('marcos@academlo.com')
+      const adminUser1 = await usersService.findUserByEmailOr404('luis@academlo.com')
       const adminRole = await rolesService.findRoleByName('admin')
       
       await queryInterface.bulkDelete('profiles', {
         user_id: {
-          [Op.and]: [adminUser.id]
+          [Op.and]: [adminUser.id, adminUser1.id ]
         },
         role_id:{
           [Op.and]:[adminRole.id]

@@ -56,3 +56,4 @@ Hecho eso, con el siguiente commando estaría listo:
 Existe una explicación en el notion del proyecto que explica el ___Dockerfile___ y ___docker-compose.yml___"# Para_Cuando_CWL" 
 "# Para_Cuando_CWL" 
 "# Para_Cuando_CWL" 
+"# Para_Cuando_CWL" 

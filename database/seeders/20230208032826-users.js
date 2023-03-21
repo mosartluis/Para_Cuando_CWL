@@ -11,11 +11,20 @@ module.exports = {
     const usersSeeds = [
       {
         id: uuid.v4(),
-        first_name: 'TEST',
-        last_name: 'TEST LN',
-        email: 'example@academlo.com',
-        username: 'example@academlo.com',
-        password: hashPassword('12345678910'),
+        first_name: 'Marcos',
+        last_name: 'Diaz',
+        email: 'marcos@academlo.com',
+        username: 'YouGamesDiaz',
+        password: hashPassword('root'),
+        created_at: new Date(),
+        updated_at: new Date(),
+      }, {
+        id: uuid.v4(),
+        first_name: 'Luis',
+        last_name: 'Arteaga',
+        email: 'luis@academlo.com',
+        username: 'arteagaLuis',
+        password: hashPassword('admin'),
         created_at: new Date(),
         updated_at: new Date(),
       },
@@ -35,7 +44,8 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction()
 
     const userNames = [
-      'example@academlo.com',
+      'YouGamesDiaz',
+      'Arteaga',
     ]
 
     try {
